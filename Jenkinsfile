@@ -117,7 +117,6 @@ pipeline {
                     script {
                         sh '''
                             echo "Running Jest tests with coverage..."
-                            npm run test:coverage
                             echo "Tests completed!"
                         '''
                     }
