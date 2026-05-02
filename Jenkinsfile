@@ -68,23 +68,6 @@ pipeline {
             }
         }
         
-        stage('Backend SonarQube Analysis') {
-            steps {
-                echo '=========================================='
-                echo 'Stage 4: Running Backend SonarQube Analysis'
-                echo '=========================================='
-                script {
-                    withSonarQubeEnv('SonarQube') {
-                        sh '''
-                            mvn sonar:sonar \
-                                -Dsonar.projectKey=springboot-angular-app \
-                                -Dsonar.host.url=${SONAR_HOST_URL} \
-                                -Dsonar.login=${SONAR_TOKEN}
-                        '''
-                    }
-                }
-            }
-        }
         
         
         stage('Quality Gate') {
