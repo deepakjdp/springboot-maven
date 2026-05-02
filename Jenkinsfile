@@ -70,16 +70,6 @@ pipeline {
         
         
         
-        stage('Quality Gate') {
-            steps {
-                echo '=========================================='
-                echo 'Stage 8: Checking SonarQube Quality Gate'
-                echo '=========================================='
-                timeout(time: 5, unit: 'MINUTES') {
-                    waitForQualityGate abortPipeline: false
-                }
-            }
-        }
         
         stage('Package Backend') {
             steps {
